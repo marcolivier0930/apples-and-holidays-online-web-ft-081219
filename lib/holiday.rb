@@ -53,6 +53,8 @@ def all_holidays_with_bbq(holiday_hash)
   # return an array of holiday names (as symbols) where supply lists
   # include the string "BBQ"
   id_bbq_season_values = holiday_hash.coolect {|season, holidays|
+  holidays.select {|holiday, stuffs|
+  stuffs.include?("BBQ")}}.delete_if {|item| item.empty?}
 end
 
 
